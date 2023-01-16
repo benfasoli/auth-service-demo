@@ -1,0 +1,61 @@
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[project]
+authors = [
+  {name = "Ben Fasoli", email = "benfasoli@gmail.com"},
+]
+dependencies = [
+  "bcrypt",
+  "fastapi",
+  "pydantic",
+  "pyjwt",
+  "python-multipart",
+]
+description = ''
+dynamic = ["version"]
+keywords = []
+license = "MIT"
+name = "api-auth"
+readme = "README.md"
+requires-python = ">=3.10"
+
+[project.urls]
+Documentation = "https://github.com/benfasoli/api-auth#readme"
+Issues = "https://github.com/benfasoli/api-auth/issues"
+Source = "https://github.com/benfasoli/api-auth"
+
+[project.optional-dependencies]
+dev = [
+  "black",
+  "isort",
+  "httpx",
+  "mypy",
+  "pytest",
+  "pytest-cov",
+  "ruff",
+]
+
+[tool.hatch.version]
+path = "src/__about__.py"
+
+[tool.coverage.run]
+branch = true
+omit = [
+  "src/__about__.py",
+]
+parallel = true
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+strict = true
