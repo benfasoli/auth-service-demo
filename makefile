@@ -27,6 +27,10 @@ lint:
 	.venv/bin/ruff .
 	.venv/bin/mypy .
 
+.PHONY: serve
+serve:
+	.venv/bin/uvicorn src.main:app --reload
+
 .PHONY: test
 test:
 	.venv/bin/pytest --cov-report=html:.coverage_html --cov-report=term-missing --cov-config=pyproject.toml --cov=src --cov=tests

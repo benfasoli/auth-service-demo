@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field, ValidationError
 
 JWT_KEY = "hs256-secret-key"
 
-app = FastAPI()
+app = FastAPI(docs_url="/")
 
 
 class User(BaseModel):
