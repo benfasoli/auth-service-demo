@@ -1,3 +1,6 @@
+.PHONY: all
+all: install lint test
+
 .PHONY: install
 install:
 	python3.10 -m venv .venv
@@ -21,7 +24,7 @@ format:
 .PHONY: lint
 lint:
 	.venv/bin/black --check --diff .
-	.venv/bin/ruff .
+	ruff .
 	.venv/bin/mypy .
 
 .PHONY: test
