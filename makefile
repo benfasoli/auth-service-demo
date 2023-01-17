@@ -24,7 +24,7 @@ format:
 .PHONY: lint
 lint:
 	.venv/bin/black --check --diff .
-	ruff .
+	.venv/bin/ruff .
 	.venv/bin/mypy .
 
 .PHONY: test
