@@ -1,22 +1,16 @@
 [build-system]
 build-backend = "hatchling.build"
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-vcs"]
 
 [project]
-authors = [
-  {name = "Ben Fasoli", email = "benfasoli@gmail.com"},
-]
 dependencies = [
-  "bcrypt",
-  "fastapi",
-  "pydantic",
-  "pyjwt",
-  "python-multipart",
+  "bcrypt ~= 4.0.0",
+  "fastapi ~= 0.89.0",
+  "pydantic ~= 1.10.0",
+  "pyjwt ~= 2.6.0",
+  "python-multipart ~= 0.0.5",
 ]
-description = ''
 dynamic = ["version"]
-keywords = []
-license = "MIT"
 name = "api-auth"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -28,17 +22,17 @@ Source = "https://github.com/benfasoli/api-auth"
 
 [project.optional-dependencies]
 dev = [
-  "black",
-  "isort",
-  "httpx",
-  "mypy",
-  "pytest",
-  "pytest-cov",
-  "ruff",
+  "black ~= 22.12.0",
+  "isort ~= 5.11.0",
+  "httpx ~= 0.23.0",
+  "mypy == 0.991",
+  "pytest ~= 7.2.0",
+  "pytest-cov ~= 4.0.0",
+  "ruff ~= 0.0.224",
 ]
 
 [tool.hatch.version]
-path = "src/__about__.py"
+source = "vcs"
 
 [tool.coverage.run]
 branch = true
@@ -46,13 +40,6 @@ omit = [
   "src/__about__.py",
 ]
 parallel = true
-
-[tool.coverage.report]
-exclude_lines = [
-  "no cov",
-  "if __name__ == .__main__.:",
-  "if TYPE_CHECKING:",
-]
 
 [tool.isort]
 profile = "black"
