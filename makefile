@@ -8,14 +8,14 @@ install:
 
 .PHONY: clean
 clean:
-	find . -name '*.py[co]' -type f -exec rm -f {} +
-	find . -name '__pycache__' -type d -exec rm -fr {} +
+	rm -fr .venv
 	rm -fr .coverage*
 	rm -fr .coverage_html
 	rm -fr .mypy_cache
 	rm -fr .pytest_cache
 	rm -fr .ruff_cache
-	rm -fr .venv
+	find . -name '*.py[co]' -type f -exec rm -f {} +
+	find . -name '__pycache__' -type d -exec rm -fr {} +
 
 .PHONY: format
 format:
